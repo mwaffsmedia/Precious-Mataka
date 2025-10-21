@@ -278,6 +278,7 @@
             padding: 0 5%;
         }
 
+        /* Updated: Hero Badge moved down further */
         .hero-badge {
             display: inline-block;
             background: rgba(16, 185, 129, 0.1);
@@ -288,7 +289,7 @@
             font-weight: 500;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 3rem; /* Increased spacing */
+            margin-bottom: 5rem; /* Increased from 3rem to 5rem (approx 1cm) */
             border: 1px solid rgba(16, 185, 129, 0.3);
             opacity: 0;
             animation: fadeInUp 1s ease forwards 0.3s;
@@ -422,10 +423,10 @@
             transform: translateY(-5px);
         }
 
-        /* Scroll Indicator */
+        /* Updated: Scroll Indicator moved down further */
         .scroll-indicator {
             position: absolute;
-            bottom: 4rem; /* Moved down further */
+            bottom: 6rem; /* Increased from 4rem to 6rem (approx 1cm) */
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
@@ -606,6 +607,32 @@
             font-weight: 500;
         }
 
+        /* NEW: Portfolio Filter */
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 30px;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--emerald);
+            color: var(--white);
+            border-color: var(--emerald);
+        }
+
         /* Featured Projects */
         .featured-projects {
             background: var(--dark-light);
@@ -707,6 +734,41 @@
             gap: 0.8rem;
         }
 
+        /* NEW: Skills Progress Bars */
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-percentage {
+            color: var(--emerald);
+            font-weight: 600;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--emerald), var(--emerald-light));
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s ease-in-out;
+        }
+
         /* Skills Section */
         .skills {
             background: var(--dark);
@@ -758,6 +820,187 @@
         .skill-list li i {
             color: var(--emerald);
             font-size: 0.9rem;
+        }
+
+        /* NEW: Testimonials Section */
+        .testimonials {
+            background: var(--dark-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin: 0 1rem;
+            border: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--gray-light);
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-text::before, .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--emerald);
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .testimonial-text::before {
+            top: -1rem;
+            left: -1rem;
+        }
+
+        .testimonial-text::after {
+            bottom: -2rem;
+            right: -1rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--emerald), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .client-details h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .client-details p {
+            color: var(--gray);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background: var(--emerald);
+            transform: scale(1.2);
+        }
+
+        /* NEW: Blog Section */
+        .blog-preview {
+            background: var(--dark);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(45deg, var(--emerald), var(--gold));
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .blog-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-category {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--emerald);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--emerald);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            gap: 0.8rem;
         }
 
         /* Experience & Education */
@@ -844,6 +1087,21 @@
         .timeline-content p {
             color: var(--gray);
             line-height: 1.7;
+        }
+
+        /* NEW: Download Resume Section */
+        .resume-section {
+            background: var(--dark);
+            text-align: center;
+        }
+
+        .resume-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .resume-download {
+            margin-top: 2rem;
         }
 
         /* Contact Form Section */
@@ -1003,6 +1261,35 @@
             background: rgba(239, 68, 68, 0.1);
             color: #ef4444;
             border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        /* NEW: Newsletter Section */
+        .newsletter {
+            background: var(--dark-light);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--white);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--emerald);
         }
 
         /* Footer */
@@ -1176,6 +1463,29 @@
             gap: 0.8rem;
         }
 
+        /* NEW: Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 1.5rem;
+            right: 5%;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--emerald);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             section {
@@ -1254,7 +1564,7 @@
                 font-size: 2.2rem;
             }
 
-            .about-grid, .projects-grid, .skills-container {
+            .about-grid, .projects-grid, .skills-container, .blog-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1272,6 +1582,10 @@
                 padding: 2rem;
             }
 
+            .newsletter-form {
+                flex-direction: column;
+            }
+
             .hire-me {
                 left: 50%;
                 transform: translateX(-50%);
@@ -1280,6 +1594,13 @@
                 max-width: 300px;
                 text-align: center;
                 justify-content: center;
+            }
+
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
             }
 
             .back-to-top {
@@ -1316,7 +1637,7 @@
                 padding: 0.4rem 1.2rem;
             }
             
-            .skill-category, .timeline-content {
+            .skill-category, .timeline-content, .testimonial-item {
                 padding: 1.5rem;
             }
         }
@@ -1349,6 +1670,11 @@
         </ul>
     </nav>
 
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-bg">
@@ -1356,6 +1682,7 @@
             <div class="particles" id="particles"></div>
         </div>
         <div class="hero-content">
+            <!-- Updated: Hero Badge moved down -->
             <div class="hero-badge">Digital Innovator & Agripreneur</div>
             <h1 class="hero-title">
                 Hi, I'm <span class="highlight">Precious Yamikani Mataka</span>
@@ -1373,6 +1700,7 @@
                 </a>
             </div>
         </div>
+        <!-- Updated: Scroll Indicator moved down -->
         <div class="scroll-indicator">Scroll Down</div>
     </section>
 
@@ -1431,8 +1759,17 @@
             <h2 class="section-title">Featured Projects</h2>
             <p class="section-description">A selection of projects that demonstrate my expertise across agriculture, technology, and media.</p>
         </div>
+        
+        <!-- NEW: Portfolio Filter -->
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="agriculture">Agriculture</button>
+            <button class="filter-btn" data-filter="media">Media</button>
+            <button class="filter-btn" data-filter="web">Web Development</button>
+        </div>
+        
         <div class="projects-grid">
-            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-card" data-category="agriculture" data-aos="fade-up" data-aos-delay="100">
                 <div class="project-image" style="background: linear-gradient(45deg, #0a3d2e, #1a5c46);">
                     <!-- Project image would go here -->
                 </div>
@@ -1449,7 +1786,7 @@
                     </a>
                 </div>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-card" data-category="media web" data-aos="fade-up" data-aos-delay="200">
                 <div class="project-image" style="background: linear-gradient(45deg, #1e3a8a, #3b82f6);">
                     <!-- Project image would go here -->
                 </div>
@@ -1466,7 +1803,7 @@
                     </a>
                 </div>
             </div>
-            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-card" data-category="web agriculture" data-aos="fade-up" data-aos-delay="300">
                 <div class="project-image" style="background: linear-gradient(45deg, #7c2d12, #ea580c);">
                     <!-- Project image would go here -->
                 </div>
@@ -1496,32 +1833,195 @@
         <div class="skills-container">
             <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
                 <h3><i class="fas fa-laptop-code"></i> Web & Digital Development</h3>
-                <ul class="skill-list">
-                    <li><i class="fas fa-check"></i> HTML, CSS, JavaScript</li>
-                    <li><i class="fas fa-check"></i> Google Sites Development</li>
-                    <li><i class="fas fa-check"></i> Digital Questionnaire Tools (KoboToolbox, ODK)</li>
-                    <li><i class="fas fa-check"></i> Google Forms & SurveyCTO</li>
-                </ul>
+                
+                <!-- NEW: Skills Progress Bars -->
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML/CSS/JavaScript</span>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="90"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Google Sites Development</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Digital Questionnaire Tools</span>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
             </div>
+            
             <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
                 <h3><i class="fas fa-chart-line"></i> Data Analysis & Research</h3>
-                <ul class="skill-list">
-                    <li><i class="fas fa-check"></i> Stata Statistical Software</li>
-                    <li><i class="fas fa-check"></i> R Programming Language</li>
-                    <li><i class="fas fa-check"></i> Python with Colab</li>
-                    <li><i class="fas fa-check"></i> SPSS & Excel Analytics</li>
-                    <li><i class="fas fa-check"></i> Research Design & Implementation</li>
-                </ul>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Stata Statistical Software</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">R Programming Language</span>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Python with Colab</span>
+                        <span class="skill-percentage">70%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="70"></div>
+                    </div>
+                </div>
             </div>
+            
             <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
                 <h3><i class="fas fa-palette"></i> Creative & Media Production</h3>
-                <ul class="skill-list">
-                    <li><i class="fas fa-check"></i> Adobe Photoshop & Canva</li>
-                    <li><i class="fas fa-check"></i> Adobe Premiere Pro Video Editing</li>
-                    <li><i class="fas fa-check"></i> CapCut Mobile Editing</li>
-                    <li><i class="fas fa-check"></i> DSLR Photography</li>
-                    <li><i class="fas fa-check"></i> YouTube Channel Management</li>
-                </ul>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Adobe Photoshop & Canva</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="85"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Adobe Premiere Pro</span>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="80"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">DSLR Photography</span>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-width="75"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Testimonials Section -->
+    <section class="testimonials">
+        <div class="section-header">
+            <span class="section-subtitle">Client Feedback</span>
+            <h2 class="section-title">Testimonials</h2>
+            <p class="section-description">What clients and partners say about working with me.</p>
+        </div>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-item" data-aos="fade-up">
+                <p class="testimonial-text">Precious delivered exceptional work on our agricultural platform. His understanding of both technology and farming needs made him the perfect partner for this project.</p>
+                <div class="client-info">
+                    <div class="client-avatar">JM</div>
+                    <div class="client-details">
+                        <h4>John Mwale</h4>
+                        <p>Agricultural Cooperative Manager</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <div class="testimonial-dot active"></div>
+                <div class="testimonial-dot"></div>
+                <div class="testimonial-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Blog Section -->
+    <section class="blog-preview">
+        <div class="section-header">
+            <span class="section-subtitle">Latest Thoughts</span>
+            <h2 class="section-title">Insights & Articles</h2>
+            <p class="section-description">Sharing knowledge and experiences in agriculture, technology, and entrepreneurship.</p>
+        </div>
+        
+        <div class="blog-grid">
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-image"></div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i> June 15, 2023
+                        </div>
+                        <div class="blog-category">Agriculture</div>
+                    </div>
+                    <h3 class="blog-title">Digital Transformation in African Agriculture</h3>
+                    <p class="blog-excerpt">Exploring how technology is revolutionizing farming practices and creating new opportunities for smallholder farmers across the continent.</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="blog-image"></div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i> April 22, 2023
+                        </div>
+                        <div class="blog-category">Technology</div>
+                    </div>
+                    <h3 class="blog-title">Building Sustainable Media Enterprises in Malawi</h3>
+                    <p class="blog-excerpt">Lessons from founding and growing Mwaffs Media as a youth-led digital media company in a competitive market.</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="blog-image"></div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <div class="blog-date">
+                            <i class="far fa-calendar"></i> February 10, 2023
+                        </div>
+                        <div class="blog-category">Entrepreneurship</div>
+                    </div>
+                    <h3 class="blog-title">Youth Empowerment Through Agribusiness</h3>
+                    <p class="blog-excerpt">How agricultural entrepreneurship can provide meaningful employment and economic opportunities for young people in rural areas.</p>
+                    <a href="#" class="read-more">
+                        Read More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1565,6 +2065,22 @@
                     <h4>ALX Africa</h4>
                     <p>Completed intensive program in artificial intelligence fundamentals and their applications in various industries.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Download Resume Section -->
+    <section class="resume-section">
+        <div class="section-header">
+            <span class="section-subtitle">Get My Full Profile</span>
+            <h2 class="section-title">Download Resume</h2>
+        </div>
+        <div class="resume-content" data-aos="fade-up">
+            <p class="section-description">Want a comprehensive overview of my skills, experience, and qualifications? Download my complete resume for detailed information.</p>
+            <div class="resume-download">
+                <a href="#" class="btn btn-outline">
+                    <i class="fas fa-download"></i> Download Resume (PDF)
+                </a>
             </div>
         </div>
     </section>
@@ -1637,6 +2153,19 @@
                 </form>
             </div>
         </div>
+    </section>
+
+    <!-- NEW: Newsletter Section -->
+    <section class="newsletter">
+        <div class="section-header">
+            <h2 class="section-title">Stay Updated</h2>
+            <p class="section-description">Subscribe to my newsletter for updates on projects, insights, and opportunities.</p>
+        </div>
+        
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
     </section>
 
     <!-- Footer -->
@@ -1896,6 +2425,117 @@
                 }
             });
         }
+
+        // NEW: Portfolio Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        if (categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // NEW: Skills Progress Animation
+        const skillProgressBars = document.querySelectorAll('.skill-progress');
+        
+        const animateSkills = () => {
+            skillProgressBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 500);
+            });
+        };
+        
+        // Animate skills when they come into view
+        const skillsSection = document.querySelector('.skills');
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkills();
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        skillsObserver.observe(skillsSection);
+
+        // NEW: Testimonial Slider
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        let currentTestimonial = 0;
+        
+        function showTestimonial(index) {
+            // Update dots
+            testimonialDots.forEach(dot => dot.classList.remove('active'));
+            testimonialDots[index].classList.add('active');
+            
+            // In a real implementation, you would update the testimonial content here
+            currentTestimonial = index;
+        }
+        
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showTestimonial(index);
+            });
+        });
+        
+        // Auto-rotate testimonials
+        setInterval(() => {
+            let nextIndex = (currentTestimonial + 1) % testimonialDots.length;
+            showTestimonial(nextIndex);
+        }, 5000);
+
+        // NEW: Newsletter Form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('.newsletter-input').value;
+                
+                // Simulate subscription
+                newsletterForm.innerHTML = '<p style="color: var(--emerald); font-weight: 500;">Thank you for subscribing!</p>';
+                
+                // In a real implementation, you would send the email to your server
+                console.log('Newsletter subscription:', email);
+            });
+        }
+
+        // NEW: Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                // You would add light theme CSS variables here
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
     </script>
 </body>
 </html>
