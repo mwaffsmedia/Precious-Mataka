@@ -288,7 +288,7 @@
             font-weight: 500;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem; /* Increased spacing */
             border: 1px solid rgba(16, 185, 129, 0.3);
             opacity: 0;
             animation: fadeInUp 1s ease forwards 0.3s;
@@ -308,6 +308,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             position: relative;
+            white-space: nowrap; /* Keep name on one line */
         }
 
         .hero-title .highlight::after {
@@ -424,7 +425,7 @@
         /* Scroll Indicator */
         .scroll-indicator {
             position: absolute;
-            bottom: 3rem;
+            bottom: 4rem; /* Moved down further */
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
@@ -1582,7 +1583,9 @@
                 <p>I'm passionate about creating innovative solutions that bridge agriculture, technology, and media. Whether you need agricultural consulting, web development, data analysis, or media production, I'm here to help bring your vision to life.</p>
                 
                 <ul class="service-highlights">
-                    <li><i class="fas fa-check-circle"></i> Agricultural Innovation & Extension Services</li>
+                    <li><a href="#contact-form" onclick="setService('agricultural-consulting')" style="color: var(--gray-light); text-decoration: none; display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <i class="fas fa-check-circle"></i> Agricultural Innovation & Extension Services
+                    </a></li>
                     <li><i class="fas fa-check-circle"></i> Web Development & Digital Solutions</li>
                     <li><i class="fas fa-check-circle"></i> Data Analysis & Research Projects</li>
                     <li><i class="fas fa-check-circle"></i> Media Production & Content Creation</li>
@@ -1596,7 +1599,7 @@
                 </div>
             </div>
             
-            <div class="contact-form" data-aos="fade-left">
+            <div class="contact-form" data-aos="fade-left" id="contact-form">
                 <form id="contactForm">
                     <div class="form-group">
                         <label for="name">Full Name *</label>
@@ -1618,18 +1621,6 @@
                             <option value="media-production">Media Production</option>
                             <option value="youth-empowerment">Youth Empowerment Programs</option>
                             <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="budget">Project Budget (USD)</label>
-                        <select id="budget" name="budget" class="form-control service-select">
-                            <option value="" selected>Select budget range</option>
-                            <option value="under-500">Under $500</option>
-                            <option value="500-1000">$500 - $1,000</option>
-                            <option value="1000-5000">$1,000 - $5,000</option>
-                            <option value="5000+">$5,000+</option>
-                            <option value="to-be-discussed">To be discussed</option>
                         </select>
                     </div>
                     
@@ -1679,7 +1670,7 @@
             <div class="footer-col">
                 <h3>Services</h3>
                 <ul class="footer-links">
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Agricultural Consulting</a></li>
+                    <li><a href="#contact-form" onclick="setService('agricultural-consulting')"><i class="fas fa-chevron-right"></i> Agricultural Consulting</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Web Development</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Data Analysis</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Media Production</a></li>
@@ -1711,6 +1702,12 @@
             mirror: true,
             offset: 100
         });
+
+        // Function to set service in contact form
+        function setService(serviceValue) {
+            document.getElementById('service').value = serviceValue;
+            document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });
+        }
 
         // Loading Screen
         window.addEventListener('load', () => {
